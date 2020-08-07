@@ -18,7 +18,38 @@ const store = new Vuex.Store({
       name: `pronama-summer2020`,
     },
 
-    characters: [],
+    characters: [
+      {
+        name: `暮井 慧（プロ生ちゃん）`,
+        images: [
+          { name: `表情A`, file: 'kei_01.png' },
+          { name: `表情B`, file: 'kei_02.png' },
+          { name: `表情C`, file: 'kei_03.png' },
+          { name: `表情D`, file: 'kei_04.png' },
+          { name: `表情E`, file: 'kei_05.png' },
+        ],
+      },
+      {
+        name: `戸増千由莉（とますちゆり）`,
+        images: [
+          { name: `表情A`, file: 'chiyuri_01.png' },
+          { name: `表情B`, file: 'chiyuri_02.png' },
+          { name: `表情C`, file: 'chiyuri_03.png' },
+          { name: `表情D`, file: 'chiyuri_04.png' },
+          { name: `表情E`, file: 'chiyuri_05.png' },
+        ],
+      },
+      {
+        name: `フィネス・ヒルヴィレッジ（Finesse Hillvillage）`,
+        images: [
+          { name: `表情A`, file: 'finesse_01.png' },
+          { name: `表情B`, file: 'finesse_02.png' },
+          { name: `表情C`, file: 'finesse_03.png' },
+          { name: `表情D`, file: 'finesse_04.png' },
+          { name: `表情E`, file: 'finesse_05.png' },
+        ],
+      },
+    ],
   },
   mutations: {},
 });
