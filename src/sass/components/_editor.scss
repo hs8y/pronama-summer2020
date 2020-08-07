@@ -1,0 +1,122 @@
+// *------------------------------------------------
+// editor
+// ------------------------------------------------*/
+.editor {
+
+  &__table {
+    $table-breakpoint: sm;
+    $table-head-max-width: 25%;
+    $table-head-bg-color: #eee;
+
+    &__row {
+      display: block;
+      margin: 0 0 4px;
+
+      @include media-breakpoint-up($table-breakpoint) {
+        display: flex;
+      }
+    }
+
+    @at-root %cell {
+      display: block;
+      margin: 0;
+      padding: 8px 15px;
+    }
+
+    &__head {
+      @extend %cell;
+
+      color: color-yiq($table-head-bg-color);
+      background: $table-head-bg-color;
+
+      @include media-breakpoint-up($table-breakpoint) {
+        $max-width: $table-head-max-width;
+
+        flex: 0 0 $max-width;
+        max-width: $max-width;
+      }
+    }
+    &__cell {
+      @extend %cell;
+
+      @include media-breakpoint-up($table-breakpoint) {
+        $max-width: 100% - $table-head-max-width;
+
+        flex: 0 0 $max-width;
+        max-width: $max-width;
+      }
+    }
+  }
+
+  &__profile {
+    $preview-icon-size: 100px;
+
+    display: flex;
+    align-items: flex-start;
+
+    &__icon {
+      display: block;
+      margin-right: 15px;
+      flex: 0 0 auto;
+
+      img {
+        display: block;
+        width: $preview-icon-size;
+        height: $preview-icon-size;
+        pointer-events: none;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    &__form {
+      display: block;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  &__background {
+
+    &__image {
+      $image: &;
+      display: block;
+      max-width: 150px;
+      position: relative;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      &__reset_btn {
+        $size: 24px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: $size;
+        height: $size;
+        font-size: 14px;
+        background: $gray-300;
+        border-radius: 50%;
+        overflow: hidden;
+
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        z-index: 2;
+        margin: auto;
+
+        opacity: 0.7;
+        @include transition;
+        cursor: pointer;
+
+        @at-root #{$image}:hover & {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}

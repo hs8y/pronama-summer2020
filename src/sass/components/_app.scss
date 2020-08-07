@@ -1,0 +1,44 @@
+// *------------------------------------------------
+// app
+// ------------------------------------------------*/
+.app {
+  display: block;
+
+  &__body {
+    padding: 25px 0;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 30px;
+
+    &__prefix {
+      display: block;
+      font-size: 0.6em;
+      margin: 0 0 4px;
+    }
+  }
+
+  &__preview {
+    display: block;
+  }
+  &__editor {
+    display: block;
+  }
+}
+
+
+
+.app_footer {
+  display: block;
+  padding: 15px 0;
+  background: theme-color('light');
+
+  &__copyright {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+  }
+}

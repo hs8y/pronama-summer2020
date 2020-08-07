@@ -1,0 +1,19 @@
+// *------------------------------------------------
+// preview
+// ------------------------------------------------*/
+.preview {
+  display: block;
+  margin: 0 0 20px;
+
+  &__canvas_frame {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+  }
+
+  &__canvas {
+    display: block;
+    width: 100%;
+  }
+}
