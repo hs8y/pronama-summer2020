@@ -11,11 +11,26 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
 
+// Components
+const require_component = require.context('./components', false, /.+\.vue$/);
+require_component.keys().forEach(name => {
+  const config = require_component(name)
+  const component_name = name.split('/').pop().replace(/\.\w+$/, '');
+
+  Vue.component(component_name, config.default);
+});
+
 
 const store = new Vuex.Store({
   state: {
     app: {
       name: `pronama-summer2020`,
+      image_path: '/images',
+
+      character: {},
+      character_type_index: 0,
+      background: '',
+      comment: '',
     },
 
     characters: [
@@ -51,7 +66,21 @@ const store = new Vuex.Store({
       },
     ],
   },
-  mutations: {},
+  mutations: {
+    updateCharacter(state, character) {
+      state.app.character = character;
+    },
+    updateCharacterType(state, index) {
+      state.app.character_type_index = index;
+    },
+    updateBackground(state, background) {
+      state.app.background = background;
+    },
+    updateComment(state, comment) {
+      state.app.comment = comment;
+    },
+  },
+  getters: {},
 });
 
 
