@@ -7,6 +7,7 @@
         :comment="comment"
         @updateDownloadLink="updateDownloadLink"
         :download-type="download_type"
+        ref="canvas"
       />
     </div>
     <div class="text-right my-1" v-if="download_link !== ''">
@@ -44,6 +45,9 @@ export default {
   },
 
   methods: {
+    drawCanvas() {
+      this.$refs.canvas.draw();
+    },
     updateDownloadLink(download_link) {
       this.download_link = download_link;
     },

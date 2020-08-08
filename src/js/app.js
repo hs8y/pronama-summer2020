@@ -5,6 +5,7 @@
 */
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueSmoothScroll from 'vue2-smooth-scroll'
 import App from './App.vue';
 import BootstrapVue from 'bootstrap-vue'
 
@@ -12,6 +13,7 @@ const path = require('path');
 
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
+Vue.use(VueSmoothScroll);
 
 // Components
 const require_component = require.context('./components', false, /.+\.vue$/);

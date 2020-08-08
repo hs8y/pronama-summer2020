@@ -36,6 +36,11 @@
   }
   &__editor {
     display: block;
+    margin: 0 0 40px;
+
+    &__submit {
+      display: block;
+    }
   }
 }
 

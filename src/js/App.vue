@@ -12,13 +12,19 @@
 
       <div class="app__preview">
         <b-container>
-          <Preview />
+          <Preview ref="preview" />
         </b-container>
       </div>
 
       <div class="app__editor">
         <b-container>
           <Editor />
+
+          <div class="app__editor__submit">
+            <button class="btn btn-block btn-primary" type="button" @click="drawCanvas">
+              <i class="fas fa-pen"></i> 生成
+            </button>
+          </div>
         </b-container>
       </div>
     </div>
@@ -39,6 +45,19 @@ export default {
   computed: {
     app() { return this.$store.state.app; },
     characters() { return this.$store.state.characters; },
+  },
+
+  methods: {
+    drawCanvas() {
+      this.$refs.preview.drawCanvas();
+
+      this.$smoothScroll({
+        scrollTo: this.$el,
+        duration: 200,
+        offset: 0,
+        updateHistory: false,
+      })
+    },
   },
 }
 </script>

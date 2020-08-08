@@ -26,7 +26,9 @@ export default {
     return {
       is_loaded: false,
       canvas_width: 640,
+      font_family: 'APJapanesefont, Meiryo, sans-serif',
 
+      default_comment: `<コメントを入力してください>`,
     };
   },
   computed: {
@@ -52,7 +54,11 @@ export default {
   methods: {
     draw() {
       const ctx = this.ctx;
-      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); // reset
+
+      // reset
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       const character_image = this.characterImage;
       const background_image = this.backgroundImage;
@@ -115,15 +121,14 @@ export default {
         callback();
         return;
       }
+      const font_size = 22;
+      const line_height = 1.2;
+      const font_family = this.font_family;
 
       const dw = ctx.canvas.width * 0.78;
       const dh = ctx.canvas.width * 0.15;
       const x = (ctx.canvas.width * 0.15 + 60);
       const y = (ctx.canvas.height - dh - 15 + 10);
-
-      const font_size = 22;
-      const line_height = 1.2;
-      const font_family = 'APJapanesefont, Meiryo, sans-serif';
 
       ctx.font = `${font_size}px ${font_family}`;
       ctx.fillStyle = "#212121";
