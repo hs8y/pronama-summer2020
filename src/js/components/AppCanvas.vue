@@ -121,10 +121,10 @@ export default {
 
       const font_size = 22;
       const line_height = 1.2;
-      const font_family = 'Noto Sans JP, Meiryo, sans-serif';
+      const font_family = 'APJapanesefont, Meiryo, sans-serif';
 
       ctx.font = `${font_size}px ${font_family}`;
-      ctx.fillStyle = "#333333";
+      ctx.fillStyle = "#212121";
 
       comment.split('\n').map((line, index) => {
         let line_y = font_size;

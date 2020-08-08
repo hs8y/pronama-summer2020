@@ -18,4 +18,5 @@ mix
   .sass('src/sass/app.scss', 'dist/css/')
   .extract()
   .copyDirectory('src/images', 'dist/images')
+  .copyDirectory('src/fonts', 'dist/fonts')
   .copy('src/index.html', 'dist/');

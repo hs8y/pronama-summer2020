@@ -1,6 +1,14 @@
 // *------------------------------------------------
 // app
 // ------------------------------------------------*/
+@font-face {
+  src: url(/fonts/APJapanesefont.ttf);
+  font-family: APJapanesefont;
+}
+%font-ap {
+  font-family: APJapanesefont, sans-serif !important;
+}
+
 .app {
   display: block;
 
@@ -15,8 +23,10 @@
     margin: 0 0 30px;
 
     &__prefix {
+      @extend %font-ap;
       display: block;
-      font-size: 0.6em;
+      font-size: 0.7em;
+      line-height: 1;
       margin: 0 0 4px;
     }
   }
