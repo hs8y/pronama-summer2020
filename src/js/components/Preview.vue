@@ -10,7 +10,7 @@
       />
     </div>
     <div class="text-right my-1" v-if="download_link !== ''">
-      <a class="btn btn-primary" :href="download_link" :download="download_name">
+      <a class="btn btn-primary" :href="download_link" :download="download_name" target="_blank">
         <i class="fas fa-file-download"></i> 画像をダウンロード
       </a>
     </div>
