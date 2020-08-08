@@ -7,7 +7,12 @@
           <ul class="app_footer__menu__list">
             <li class="app_footer__menu__list__item">
               <a href="https://twitter.com/hs8yjp" target="_blank">
-                お問い合わせ <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"></i> お問い合わせ
+              </a>
+            </li>
+            <li class="app_footer__menu__list__item">
+              <a href="https://github.com/hs8y/pronama-summer2020" target="_blank">
+                <i class="fab fa-github"></i> GitHub
               </a>
             </li>
             <li class="app_footer__menu__list__item">
