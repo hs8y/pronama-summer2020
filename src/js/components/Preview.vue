@@ -6,6 +6,7 @@
         :background-image="background"
         :comment="comment"
         @updateDownloadLink="updateDownloadLink"
+        :download-type="download_type"
       />
     </div>
     <div class="text-right my-1" v-if="download_link !== ''">
@@ -21,6 +22,7 @@ export default {
   data() {
     return {
       download_link: '',
+      download_type: 'image/png',
     };
   },
   computed: {
@@ -34,13 +36,32 @@ export default {
     comment() { return this.app.comment; },
 
     download_name() {
-      return 'download.png';
+      const ext = (this.download_type === 'image/png' ? 'png' : 'jpg');
+      const name = `image_${this.now()}`;
+
+      return `${name}.${ext}`;
     },
   },
 
   methods: {
     updateDownloadLink(download_link) {
       this.download_link = download_link;
+    },
+    now() {
+      const d = new Date();
+      return [
+        d.getFullYear(),
+        d.getMonth() + 1,
+        d.getDay(),
+        d.getHours(),
+        d.getMinutes(),
+        d.getSeconds(),
+      ].map(v => this.zeroPadding(v)).join('');
+    },
+    zeroPadding(num, len = 2) {
+      if (String(num).length >= len) return String(num);
+
+      return (String(0).repeat(len) + String(num)).slice(-1 * len);
     },
   }
 }

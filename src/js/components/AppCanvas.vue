@@ -17,6 +17,10 @@ export default {
       type: String,
       default: '',
     },
+    downloadType: {
+      type: String,
+      default: 'image/png',
+    },
   },
   data() {
     return {
@@ -58,7 +62,7 @@ export default {
             this.drawComment(ctx, comment, () => {
               let download_link = '';
               if (background_image && comment.length > 0) {
-                download_link = this.$refs.canvas.toDataURL('image/png');
+                download_link = this.$refs.canvas.toDataURL(this.downloadType);
               }
               this.$emit('updateDownloadLink', download_link);
             });
@@ -182,8 +186,8 @@ export default {
     }
   },
   mounted() {
-    this.ctx = this.$el.getContext('2d')
-    this.draw()
+    this.ctx = this.$el.getContext('2d');
+    this.draw();
   }
 }
 </script>
