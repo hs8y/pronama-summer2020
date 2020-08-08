@@ -54,20 +54,31 @@
     display: flex;
     align-items: flex-start;
 
-    &__icon {
+    &__preview {
       display: block;
       margin-right: 15px;
-      flex: 0 0 auto;
+      flex: 0 0 $preview-icon-size;
+      max-width: $preview-icon-size;
 
-      img {
+      &__icon {
         display: block;
-        width: $preview-icon-size;
-        height: $preview-icon-size;
-        pointer-events: none;
-        border-radius: 50%;
-        overflow: hidden;
+
+        img {
+          display: block;
+          width: $preview-icon-size;
+          height: $preview-icon-size;
+          pointer-events: none;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      &__copyright {
+        font-size: 11px;
+        color: #888;
+        margin-top: 0.25em;
       }
     }
+
     &__form {
       display: block;
       flex-grow: 1;

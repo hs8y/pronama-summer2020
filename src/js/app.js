@@ -45,6 +45,7 @@ const store = new Vuex.Store({
           { name: `表情D`, file: 'kei_04.png' },
           { name: `表情E`, file: 'kei_05.png' },
         ],
+        copyright: `© 2019 合同会社プロ生`,
       },
       {
         name: `戸増千由莉（とますちゆり）`,
@@ -55,6 +56,7 @@ const store = new Vuex.Store({
           { name: `表情D`, file: 'chiyuri_04.png' },
           { name: `表情E`, file: 'chiyuri_05.png' },
         ],
+        copyright: `© 2019 合同会社プロ生`,
       },
       {
         name: `フィネス・ヒルヴィレッジ（Finesse Hillvillage）`,
@@ -65,6 +67,7 @@ const store = new Vuex.Store({
           { name: `表情D`, file: 'finesse_04.png' },
           { name: `表情E`, file: 'finesse_05.png' },
         ],
+        copyright: `© 2019 合同会社プロ生`,
       },
     ],
   },

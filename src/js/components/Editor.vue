@@ -7,8 +7,13 @@
         </dt>
         <dd class="editor__table__cell">
           <div class="editor__profile">
-            <div class="editor__profile__icon">
-              <img :src="character_image" alt="">
+            <div class="editor__profile__preview">
+              <div class="editor__profile__preview__icon">
+                <img :src="character_image" alt="">
+              </div>
+              <div class="editor__profile__preview__copyright" v-if="selected_character.copyright">
+                {{ selected_character.copyright }}
+              </div>
             </div>
 
             <div class="editor__profile__form">
@@ -70,8 +75,6 @@
 </template>
 
 <script>
-const path = require('path');
-
 export default {
   data() {
     return {};
