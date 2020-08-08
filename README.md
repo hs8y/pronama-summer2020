@@ -38,7 +38,8 @@ MIT License: https://opensource.org/licenses/MIT
 
 ### Image license
 
-キャラクター「プロ生ちゃん（暮井 慧）」「戸増千由莉」「フィネス・ヒルヴィレッジ」
+キャラクター  
+「プロ生ちゃん（暮井 慧）」「戸増千由莉」「フィネス・ヒルヴィレッジ」  
 &copy; Pronama LLC, See https://kei.pronama.jp/guideline/
 
 ### Other
