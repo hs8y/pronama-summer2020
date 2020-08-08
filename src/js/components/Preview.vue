@@ -17,8 +17,6 @@
 </template>
 
 <script>
-const path = require('path');
-
 export default {
   data() {
     return {
@@ -28,17 +26,12 @@ export default {
   computed: {
     app() { return this.$store.state.app; },
     characters() { return this.$store.state.characters; },
+    character_image() { return this.$store.getters.characterImage; },
 
     selected_character() { return this.app.character; },
     character_type_index() { return this.app.character_type_index; },
     background() { return this.app.background; },
     comment() { return this.app.comment; },
-
-    character_image() {
-      const image_file_name = this.selected_character.images[this.character_type_index].file;
-
-      return path.join(this.app.image_path, image_file_name);
-    },
 
     download_name() {
       return 'download.png';

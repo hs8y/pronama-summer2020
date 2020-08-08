@@ -74,13 +74,12 @@ const path = require('path');
 
 export default {
   data() {
-    return {
-      // selected_character: null,
-    };
+    return {};
   },
   computed: {
     app() { return this.$store.state.app; },
     characters() { return this.$store.state.characters; },
+    character_image() { return this.$store.getters.characterImage; },
 
     selected_character: {
       get() { return this.app.character; },
@@ -98,17 +97,10 @@ export default {
       get() { return this.app.comment; },
       set(value) { this.$store.commit('updateComment', value); },
     },
-
-    character_image() {
-      const image_file_name = this.selected_character.images[this.character_type_index].file;
-
-      return path.join(this.app.image_path, image_file_name);
-    },
   },
 
   methods: {
     onCommentChange(e) {
-      // this.comment = e.target.value;
       this.$store.commit('updateComment', e.target.value);
     },
 

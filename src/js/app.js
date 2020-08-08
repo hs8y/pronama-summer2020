@@ -8,6 +8,8 @@ import Vuex from 'vuex';
 import App from './App.vue';
 import BootstrapVue from 'bootstrap-vue'
 
+const path = require('path');
+
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
 
@@ -80,7 +82,14 @@ const store = new Vuex.Store({
       state.app.comment = comment;
     },
   },
-  getters: {},
+  getters: {
+    characterImage: state => {
+      const index = state.app.character_type_index;
+      const file  = state.app.character.images[index].file;
+
+      return path.join(state.app.image_path, file);
+    },
+  },
 });
 
 
