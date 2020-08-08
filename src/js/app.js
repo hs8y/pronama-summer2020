@@ -27,7 +27,7 @@ const store = new Vuex.Store({
   state: {
     app: {
       name: `pronama-summer2020`,
-      image_path: '/images',
+      image_path: './images',
 
       character: {},
       character_type_index: 0,
@@ -86,6 +86,9 @@ const store = new Vuex.Store({
     },
   },
   getters: {
+    imagePath: state => image_path => {
+      return path.join(state.app.image_path, image_path);
+    },
     characterImage: state => {
       const index = state.app.character_type_index;
       const file  = state.app.character.images[index].file;

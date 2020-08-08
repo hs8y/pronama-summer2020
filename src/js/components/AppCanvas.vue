@@ -27,13 +27,15 @@ export default {
       is_loaded: false,
       canvas_width: 640,
 
-      balloon_image: '/images/balloon.png',
     };
   },
   computed: {
     canvas_height() {
       // 16 : 9
       return this.canvas_width * (9 / 16);
+    },
+    balloon_image() {
+      return this.$store.getters.imagePath('/balloon.png');
     },
   },
   watch: {

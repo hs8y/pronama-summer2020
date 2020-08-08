@@ -13,10 +13,15 @@ const mix = require('laravel-mix');
 
 mix.setPublicPath('dist');
 
+mix.options({
+  processCssUrls: false,
+})
+
 mix
   .js('src/js/app.js', 'dist/js/')
   .sass('src/sass/app.scss', 'dist/css/')
   .extract()
   .copyDirectory('src/images', 'dist/images')
   .copyDirectory('src/fonts', 'dist/fonts')
+  .copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/fonts/vender')
   .copy('src/index.html', 'dist/');
