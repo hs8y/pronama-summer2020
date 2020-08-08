@@ -1,0 +1,27 @@
+// *------------------------------------------------
+// variables
+// ------------------------------------------------*/
+
+$font-family-base: 'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'Yu Gothic', 'YuGothic', sans-serif;
+
+$primary: #1eb3f7;
+$body-bg: #fcfcfc;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 678px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 640px,
+);
+
+
+$link-color: #0366d6;
+
+$custom-file-text: (
+  ja: "選択",
+);
