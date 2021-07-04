@@ -10,6 +10,11 @@ const mix = require('laravel-mix');
  | file for your application, as well as bundling up your JS files.
  |
  */
+mix.webpackConfig({
+  resolve: {
+    fallback: { "path": require.resolve("path-browserify") },
+  }
+});
 
 mix.setPublicPath('dist');
 
@@ -18,7 +23,7 @@ mix.options({
 })
 
 mix
-  .js('src/js/app.js', 'dist/js/')
+  .js('src/js/app.js', 'dist/js/').vue()
   .sass('src/sass/app.scss', 'dist/css/')
   .extract()
   .copyDirectory('src/images', 'dist/images')
